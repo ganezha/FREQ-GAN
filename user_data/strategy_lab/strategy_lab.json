@@ -1,0 +1,1437 @@
+{
+ "deployed": "GanTrendEma4h (hyperopt)",
+ "generated": 1793959532.0467372,
+ "min_trades": 100,
+ "rule": "rank by IS win rate; qualify only if trades>=100, profit>0, profit factor>1, max DD<=35%; OOS shown for validation (min 25 trades)",
+ "leaderboard": [
+  {
+   "strategy": "GanTrendEma4h (hyperopt)",
+   "note": "hyperopt IS-only",
+   "IS": {
+    "strategy": "GanTrendEma4h",
+    "timeframe": "4h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-07 16:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 121,
+    "winrate": 83.47,
+    "profit_pct": 70.53,
+    "profit_abs": 705.32,
+    "profit_factor": 2.203,
+    "max_dd_pct": 7.36,
+    "sharpe": 1.09,
+    "avg_duration": "1 day, 0:47:00",
+    "long_trades": 52,
+    "long_winrate": 82.7,
+    "short_trades": 69,
+    "short_winrate": 84.1,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_10-04-05.zip",
+    "qualifies": true
+   },
+   "OOS": {
+    "strategy": "GanTrendEma4h",
+    "timeframe": "4h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 20,
+    "winrate": 75.0,
+    "profit_pct": 2.55,
+    "profit_abs": 25.55,
+    "profit_factor": 1.161,
+    "max_dd_pct": 3.85,
+    "sharpe": 0.24,
+    "avg_duration": "1 day, 11:01:00",
+    "long_trades": 14,
+    "long_winrate": 71.4,
+    "short_trades": 6,
+    "short_winrate": 83.3,
+    "funding_fees": -0.427,
+    "file": "backtest-result-2026-11-06_10-04-23.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanTrendEma4h",
+   "note": "base params",
+   "IS": {
+    "strategy": "GanTrendEma4h",
+    "timeframe": "4h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-07 16:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 112,
+    "winrate": 62.5,
+    "profit_pct": 128.81,
+    "profit_abs": 1288.05,
+    "profit_factor": 1.568,
+    "max_dd_pct": 23.63,
+    "sharpe": 0.66,
+    "avg_duration": "3 days, 6:31:00",
+    "long_trades": 47,
+    "long_winrate": 61.7,
+    "short_trades": 65,
+    "short_winrate": 63.1,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-49-14.zip",
+    "qualifies": true
+   },
+   "OOS": {
+    "strategy": "GanTrendEma4h",
+    "timeframe": "4h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 19,
+    "winrate": 57.89,
+    "profit_pct": 11.64,
+    "profit_abs": 116.38,
+    "profit_factor": 1.374,
+    "max_dd_pct": 11.49,
+    "sharpe": 0.51,
+    "avg_duration": "2 days, 21:26:00",
+    "long_trades": 13,
+    "long_winrate": 61.5,
+    "short_trades": 6,
+    "short_winrate": 50.0,
+    "funding_fees": 0.8755,
+    "file": "backtest-result-2026-11-06_09-50-16.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "SampleStrategy",
+   "note": "",
+   "IS": {
+    "strategy": "SampleStrategy",
+    "timeframe": "5m",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 1156,
+    "winrate": 86.51,
+    "profit_pct": -63.61,
+    "profit_abs": -636.07,
+    "profit_factor": 0.83,
+    "max_dd_pct": 75.79,
+    "sharpe": -1.72,
+    "avg_duration": "1 day, 8:15:00",
+    "long_trades": 1156,
+    "long_winrate": 86.5,
+    "short_trades": 0,
+    "short_winrate": null,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-35-16.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "SampleStrategy",
+    "timeframe": "5m",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 105,
+    "winrate": 86.67,
+    "profit_pct": -5.6,
+    "profit_abs": -56.04,
+    "profit_factor": 0.848,
+    "max_dd_pct": 17.48,
+    "sharpe": -1.02,
+    "avg_duration": "2 days, 7:24:00",
+    "long_trades": 105,
+    "long_winrate": 86.7,
+    "short_trades": 0,
+    "short_winrate": null,
+    "funding_fees": -4.5392,
+    "file": "backtest-result-2026-11-06_09-40-21.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanMtfTrendRsi",
+   "note": "",
+   "IS": {
+    "strategy": "GanMtfTrendRsi",
+    "timeframe": "15m",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 1109,
+    "winrate": 71.24,
+    "profit_pct": -64.85,
+    "profit_abs": -648.5,
+    "profit_factor": 0.85,
+    "max_dd_pct": 71.86,
+    "sharpe": -1.88,
+    "avg_duration": "11:25:00",
+    "long_trades": 553,
+    "long_winrate": 70.7,
+    "short_trades": 556,
+    "short_winrate": 71.8,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-38-08.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanMtfTrendRsi",
+    "timeframe": "15m",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 160,
+    "winrate": 68.12,
+    "profit_pct": -9.28,
+    "profit_abs": -92.83,
+    "profit_factor": 0.85,
+    "max_dd_pct": 18.27,
+    "sharpe": -1.88,
+    "avg_duration": "15:09:00",
+    "long_trades": 76,
+    "long_winrate": 61.8,
+    "short_trades": 84,
+    "short_winrate": 73.8,
+    "funding_fees": 1.1743,
+    "file": "backtest-result-2026-11-06_09-41-20.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanConnorsRsi2_4h",
+   "note": "",
+   "IS": {
+    "strategy": "GanConnorsRsi2_4h",
+    "timeframe": "4h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-07 16:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 909,
+    "winrate": 63.26,
+    "profit_pct": -17.6,
+    "profit_abs": -175.98,
+    "profit_factor": 0.966,
+    "max_dd_pct": 42.96,
+    "sharpe": -0.33,
+    "avg_duration": "14:09:00",
+    "long_trades": 401,
+    "long_winrate": 60.8,
+    "short_trades": 508,
+    "short_winrate": 65.2,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-48-45.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanConnorsRsi2_4h",
+    "timeframe": "4h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 107,
+    "winrate": 61.68,
+    "profit_pct": 3.56,
+    "profit_abs": 35.6,
+    "profit_factor": 1.091,
+    "max_dd_pct": 17.98,
+    "sharpe": 0.6,
+    "avg_duration": "15:52:00",
+    "long_trades": 65,
+    "long_winrate": 56.9,
+    "short_trades": 42,
+    "short_winrate": 69.0,
+    "funding_fees": 1.2454,
+    "file": "backtest-result-2026-11-06_09-49-57.zip",
+    "qualifies": true
+   }
+  },
+  {
+   "strategy": "GanRsiBbMeanRev",
+   "note": "",
+   "IS": {
+    "strategy": "GanRsiBbMeanRev",
+    "timeframe": "15m",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 3183,
+    "winrate": 61.95,
+    "profit_pct": -92.28,
+    "profit_abs": -922.76,
+    "profit_factor": 0.831,
+    "max_dd_pct": 94.43,
+    "sharpe": -4.46,
+    "avg_duration": "3:25:00",
+    "long_trades": 1528,
+    "long_winrate": 63.5,
+    "short_trades": 1655,
+    "short_winrate": 60.5,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-36-09.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanRsiBbMeanRev",
+    "timeframe": "15m",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 446,
+    "winrate": 57.85,
+    "profit_pct": -41.75,
+    "profit_abs": -417.55,
+    "profit_factor": 0.634,
+    "max_dd_pct": 41.84,
+    "sharpe": -12.48,
+    "avg_duration": "3:51:00",
+    "long_trades": 207,
+    "long_winrate": 56.0,
+    "short_trades": 239,
+    "short_winrate": 59.4,
+    "funding_fees": 0.3713,
+    "file": "backtest-result-2026-11-06_09-40-40.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanConnorsRsi2",
+   "note": "",
+   "IS": {
+    "strategy": "GanConnorsRsi2",
+    "timeframe": "1h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 3304,
+    "winrate": 58.38,
+    "profit_pct": -92.55,
+    "profit_abs": -925.51,
+    "profit_factor": 0.853,
+    "max_dd_pct": 95.43,
+    "sharpe": -3.54,
+    "avg_duration": "4:03:00",
+    "long_trades": 1566,
+    "long_winrate": 57.9,
+    "short_trades": 1738,
+    "short_winrate": 58.8,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-48-07.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanConnorsRsi2",
+    "timeframe": "1h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 477,
+    "winrate": 54.3,
+    "profit_pct": -38.6,
+    "profit_abs": -386.0,
+    "profit_factor": 0.633,
+    "max_dd_pct": 39.99,
+    "sharpe": -13.51,
+    "avg_duration": "4:18:00",
+    "long_trades": 220,
+    "long_winrate": 57.3,
+    "short_trades": 257,
+    "short_winrate": 51.8,
+    "funding_fees": 1.7563,
+    "file": "backtest-result-2026-11-06_09-49-38.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanDonchianBreakout",
+   "note": "",
+   "IS": {
+    "strategy": "GanDonchianBreakout",
+    "timeframe": "1h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 2075,
+    "winrate": 48.63,
+    "profit_pct": -86.01,
+    "profit_abs": -860.06,
+    "profit_factor": 0.89,
+    "max_dd_pct": 88.04,
+    "sharpe": -2.73,
+    "avg_duration": "12:38:00",
+    "long_trades": 968,
+    "long_winrate": 47.8,
+    "short_trades": 1107,
+    "short_winrate": 49.3,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-39-20.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanDonchianBreakout",
+    "timeframe": "1h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 259,
+    "winrate": 44.79,
+    "profit_pct": -9.43,
+    "profit_abs": -94.27,
+    "profit_factor": 0.946,
+    "max_dd_pct": 40.76,
+    "sharpe": -1.18,
+    "avg_duration": "15:45:00",
+    "long_trades": 141,
+    "long_winrate": 51.8,
+    "short_trades": 118,
+    "short_winrate": 36.4,
+    "funding_fees": -0.3001,
+    "file": "backtest-result-2026-11-06_09-41-50.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanSupertrend",
+   "note": "",
+   "IS": {
+    "strategy": "GanSupertrend",
+    "timeframe": "1h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 962,
+    "winrate": 44.28,
+    "profit_pct": -84.19,
+    "profit_abs": -841.89,
+    "profit_factor": 0.791,
+    "max_dd_pct": 87.74,
+    "sharpe": -2.45,
+    "avg_duration": "1 day, 0:01:00",
+    "long_trades": 464,
+    "long_winrate": 41.6,
+    "short_trades": 498,
+    "short_winrate": 46.8,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-40-01.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanSupertrend",
+    "timeframe": "1h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 145,
+    "winrate": 46.21,
+    "profit_pct": 31.3,
+    "profit_abs": 312.96,
+    "profit_factor": 1.285,
+    "max_dd_pct": 17.65,
+    "sharpe": 3.0,
+    "avg_duration": "1 day, 2:10:00",
+    "long_trades": 72,
+    "long_winrate": 47.2,
+    "short_trades": 73,
+    "short_winrate": 45.2,
+    "funding_fees": 3.6873,
+    "file": "backtest-result-2026-11-06_09-42-07.zip",
+    "qualifies": true
+   }
+  },
+  {
+   "strategy": "GanMacdRsi",
+   "note": "",
+   "IS": {
+    "strategy": "GanMacdRsi",
+    "timeframe": "15m",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 4481,
+    "winrate": 41.6,
+    "profit_pct": -98.6,
+    "profit_abs": -985.98,
+    "profit_factor": 0.764,
+    "max_dd_pct": 98.65,
+    "sharpe": -8.98,
+    "avg_duration": "3:22:00",
+    "long_trades": 2204,
+    "long_winrate": 40.4,
+    "short_trades": 2277,
+    "short_winrate": 42.7,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-37-15.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanMacdRsi",
+    "timeframe": "15m",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 636,
+    "winrate": 39.94,
+    "profit_pct": -42.99,
+    "profit_abs": -429.93,
+    "profit_factor": 0.68,
+    "max_dd_pct": 49.6,
+    "sharpe": -18.85,
+    "avg_duration": "3:34:00",
+    "long_trades": 297,
+    "long_winrate": 43.1,
+    "short_trades": 339,
+    "short_winrate": 37.2,
+    "funding_fees": -0.5502,
+    "file": "backtest-result-2026-11-06_09-41-00.zip",
+    "qualifies": false
+   }
+  },
+  {
+   "strategy": "GanEmaPullbackAdx",
+   "note": "",
+   "IS": {
+    "strategy": "GanEmaPullbackAdx",
+    "timeframe": "1h",
+    "timerange": "20241001-20260801",
+    "start": "2024-10-01 00:00:00",
+    "end": "2026-08-01 00:00:00",
+    "trades": 1100,
+    "winrate": 37.91,
+    "profit_pct": -89.18,
+    "profit_abs": -891.82,
+    "profit_factor": 0.645,
+    "max_dd_pct": 89.76,
+    "sharpe": -4.73,
+    "avg_duration": "8:22:00",
+    "long_trades": 493,
+    "long_winrate": 36.7,
+    "short_trades": 607,
+    "short_winrate": 38.9,
+    "funding_fees": 0.0,
+    "file": "backtest-result-2026-11-06_09-38-35.zip",
+    "qualifies": false
+   },
+   "OOS": {
+    "strategy": "GanEmaPullbackAdx",
+    "timeframe": "1h",
+    "timerange": "20260801-20261106",
+    "start": "2026-08-01 00:00:00",
+    "end": "2026-11-06 00:00:00",
+    "trades": 128,
+    "winrate": 35.16,
+    "profit_pct": -0.82,
+    "profit_abs": -8.19,
+    "profit_factor": 0.982,
+    "max_dd_pct": 13.77,
+    "sharpe": -0.19,
+    "avg_duration": "11:24:00",
+    "long_trades": 64,
+    "long_winrate": 32.8,
+    "short_trades": 64,
+    "short_winrate": 37.5,
+    "funding_fees": 1.6578,
+    "file": "backtest-result-2026-11-06_09-41-34.zip",
+    "qualifies": false
+   }
+  }
+ ],
+ "patterns": {
+  "pair": [
+   {
+    "key": "SOL/USDT:USDT",
+    "n": 3295,
+    "winrate": 57.4,
+    "profit_abs": -1150.71
+   },
+   {
+    "key": "DOGE/USDT:USDT",
+    "n": 2785,
+    "winrate": 57.1,
+    "profit_abs": -626.12
+   },
+   {
+    "key": "ETH/USDT:USDT",
+    "n": 3156,
+    "winrate": 56.6,
+    "profit_abs": -1255.49
+   },
+   {
+    "key": "XRP/USDT:USDT",
+    "n": 3128,
+    "winrate": 55.7,
+    "profit_abs": -694.1
+   },
+   {
+    "key": "BNB/USDT:USDT",
+    "n": 2821,
+    "winrate": 51.4,
+    "profit_abs": -634.31
+   },
+   {
+    "key": "BTC/USDT:USDT",
+    "n": 3327,
+    "winrate": 50.9,
+    "profit_abs": -534.48
+   }
+  ],
+  "side": [
+   {
+    "key": "long",
+    "n": 9432,
+    "winrate": 56.3,
+    "profit_abs": -3015.12
+   },
+   {
+    "key": "short",
+    "n": 9080,
+    "winrate": 53.3,
+    "profit_abs": -1880.09
+   }
+  ],
+  "hour_utc": [
+   {
+    "key": "22",
+    "n": 556,
+    "winrate": 58.3,
+    "profit_abs": -152.91
+   },
+   {
+    "key": "20",
+    "n": 866,
+    "winrate": 58.3,
+    "profit_abs": -57.86
+   },
+   {
+    "key": "0",
+    "n": 783,
+    "winrate": 57.9,
+    "profit_abs": 49.36
+   },
+   {
+    "key": "12",
+    "n": 876,
+    "winrate": 57.9,
+    "profit_abs": -25.69
+   },
+   {
+    "key": "10",
+    "n": 680,
+    "winrate": 57.4,
+    "profit_abs": -231.19
+   },
+   {
+    "key": "8",
+    "n": 897,
+    "winrate": 56.9,
+    "profit_abs": -1.47
+   },
+   {
+    "key": "16",
+    "n": 1186,
+    "winrate": 56.8,
+    "profit_abs": 513.43
+   },
+   {
+    "key": "3",
+    "n": 587,
+    "winrate": 56.0,
+    "profit_abs": -172.21
+   },
+   {
+    "key": "23",
+    "n": 611,
+    "winrate": 55.8,
+    "profit_abs": 32.85
+   },
+   {
+    "key": "9",
+    "n": 715,
+    "winrate": 55.7,
+    "profit_abs": -122.36
+   },
+   {
+    "key": "4",
+    "n": 802,
+    "winrate": 55.6,
+    "profit_abs": 33.12
+   },
+   {
+    "key": "19",
+    "n": 647,
+    "winrate": 55.5,
+    "profit_abs": -209.95
+   },
+   {
+    "key": "13",
+    "n": 848,
+    "winrate": 55.4,
+    "profit_abs": -390.15
+   },
+   {
+    "key": "21",
+    "n": 702,
+    "winrate": 55.3,
+    "profit_abs": -194.15
+   },
+   {
+    "key": "11",
+    "n": 656,
+    "winrate": 55.2,
+    "profit_abs": -321.06
+   },
+   {
+    "key": "6",
+    "n": 616,
+    "winrate": 54.7,
+    "profit_abs": -363.98
+   },
+   {
+    "key": "15",
+    "n": 1171,
+    "winrate": 53.8,
+    "profit_abs": -709.74
+   },
+   {
+    "key": "1",
+    "n": 703,
+    "winrate": 53.5,
+    "profit_abs": -164.84
+   },
+   {
+    "key": "7",
+    "n": 654,
+    "winrate": 53.4,
+    "profit_abs": -480.28
+   },
+   {
+    "key": "17",
+    "n": 813,
+    "winrate": 52.2,
+    "profit_abs": -235.75
+   },
+   {
+    "key": "18",
+    "n": 715,
+    "winrate": 51.3,
+    "profit_abs": -37.39
+   },
+   {
+    "key": "14",
+    "n": 1118,
+    "winrate": 50.7,
+    "profit_abs": -1072.29
+   },
+   {
+    "key": "2",
+    "n": 763,
+    "winrate": 50.6,
+    "profit_abs": -190.04
+   },
+   {
+    "key": "5",
+    "n": 547,
+    "winrate": 47.7,
+    "profit_abs": -390.66
+   }
+  ],
+  "weekday": [
+   {
+    "key": "Saturday",
+    "n": 2075,
+    "winrate": 56.8,
+    "profit_abs": 152.83
+   },
+   {
+    "key": "Wednesday",
+    "n": 2559,
+    "winrate": 55.7,
+    "profit_abs": -645.13
+   },
+   {
+    "key": "Friday",
+    "n": 2669,
+    "winrate": 55.6,
+    "profit_abs": 66.39
+   },
+   {
+    "key": "Thursday",
+    "n": 2640,
+    "winrate": 54.7,
+    "profit_abs": -503.52
+   },
+   {
+    "key": "Sunday",
+    "n": 2857,
+    "winrate": 54.6,
+    "profit_abs": -485.75
+   },
+   {
+    "key": "Monday",
+    "n": 2984,
+    "winrate": 54.1,
+    "profit_abs": -1845.79
+   },
+   {
+    "key": "Tuesday",
+    "n": 2728,
+    "winrate": 53.1,
+    "profit_abs": -1634.25
+   }
+  ],
+  "tag": [
+   {
+    "key": "SampleStrategy \u00b7 ",
+    "n": 1156,
+    "winrate": 86.5,
+    "profit_abs": -636.07
+   },
+   {
+    "key": "GanTrendEma4h (hyperopt) \u00b7 ema_cross_dn",
+    "n": 69,
+    "winrate": 84.1,
+    "profit_abs": 334.19
+   },
+   {
+    "key": "GanTrendEma4h (hyperopt) \u00b7 ema_cross_up",
+    "n": 52,
+    "winrate": 82.7,
+    "profit_abs": 371.13
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 mtf_dn_rsi_pop",
+    "n": 556,
+    "winrate": 71.8,
+    "profit_abs": -303.57
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 mtf_up_rsi_dip",
+    "n": 553,
+    "winrate": 70.7,
+    "profit_abs": -344.94
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 rsi2_pop_downtrend",
+    "n": 508,
+    "winrate": 65.2,
+    "profit_abs": 330.35
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 bb_rsi_low",
+    "n": 1528,
+    "winrate": 63.5,
+    "profit_abs": -304.11
+   },
+   {
+    "key": "GanTrendEma4h \u00b7 ema_cross_dn",
+    "n": 65,
+    "winrate": 63.1,
+    "profit_abs": 812.5
+   },
+   {
+    "key": "GanTrendEma4h \u00b7 ema_cross_up",
+    "n": 47,
+    "winrate": 61.7,
+    "profit_abs": 475.55
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 rsi2_dip_uptrend",
+    "n": 401,
+    "winrate": 60.8,
+    "profit_abs": -506.33
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 bb_rsi_high",
+    "n": 1655,
+    "winrate": 60.5,
+    "profit_abs": -618.65
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 rsi2_pop_downtrend",
+    "n": 1738,
+    "winrate": 58.8,
+    "profit_abs": -659.73
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 rsi2_dip_uptrend",
+    "n": 1566,
+    "winrate": 57.9,
+    "profit_abs": -265.79
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 dc_break_dn",
+    "n": 1107,
+    "winrate": 49.3,
+    "profit_abs": -417.65
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 dc_break_up",
+    "n": 968,
+    "winrate": 47.8,
+    "profit_abs": -442.41
+   },
+   {
+    "key": "GanSupertrend \u00b7 st_flip_dn",
+    "n": 498,
+    "winrate": 46.8,
+    "profit_abs": -239.55
+   },
+   {
+    "key": "GanMacdRsi \u00b7 macd_dn_rsi_high",
+    "n": 2277,
+    "winrate": 42.7,
+    "profit_abs": -623.75
+   },
+   {
+    "key": "GanSupertrend \u00b7 st_flip_up",
+    "n": 464,
+    "winrate": 41.6,
+    "profit_abs": -602.34
+   },
+   {
+    "key": "GanMacdRsi \u00b7 macd_up_rsi_low",
+    "n": 2204,
+    "winrate": 40.4,
+    "profit_abs": -362.22
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 pullback_dn",
+    "n": 607,
+    "winrate": 38.9,
+    "profit_abs": -494.22
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 pullback_up",
+    "n": 493,
+    "winrate": 36.7,
+    "profit_abs": -397.61
+   }
+  ],
+  "strategy_side": [
+   {
+    "key": "SampleStrategy \u00b7 long",
+    "n": 1156,
+    "winrate": 86.5,
+    "profit_abs": -636.07
+   },
+   {
+    "key": "GanTrendEma4h (hyperopt) \u00b7 short",
+    "n": 69,
+    "winrate": 84.1,
+    "profit_abs": 334.19
+   },
+   {
+    "key": "GanTrendEma4h (hyperopt) \u00b7 long",
+    "n": 52,
+    "winrate": 82.7,
+    "profit_abs": 371.13
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 short",
+    "n": 556,
+    "winrate": 71.8,
+    "profit_abs": -303.57
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 long",
+    "n": 553,
+    "winrate": 70.7,
+    "profit_abs": -344.94
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 short",
+    "n": 508,
+    "winrate": 65.2,
+    "profit_abs": 330.35
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 long",
+    "n": 1528,
+    "winrate": 63.5,
+    "profit_abs": -304.11
+   },
+   {
+    "key": "GanTrendEma4h \u00b7 short",
+    "n": 65,
+    "winrate": 63.1,
+    "profit_abs": 812.5
+   },
+   {
+    "key": "GanTrendEma4h \u00b7 long",
+    "n": 47,
+    "winrate": 61.7,
+    "profit_abs": 475.55
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 long",
+    "n": 401,
+    "winrate": 60.8,
+    "profit_abs": -506.33
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 short",
+    "n": 1655,
+    "winrate": 60.5,
+    "profit_abs": -618.65
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 short",
+    "n": 1738,
+    "winrate": 58.8,
+    "profit_abs": -659.73
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 long",
+    "n": 1566,
+    "winrate": 57.9,
+    "profit_abs": -265.79
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 short",
+    "n": 1107,
+    "winrate": 49.3,
+    "profit_abs": -417.65
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 long",
+    "n": 968,
+    "winrate": 47.8,
+    "profit_abs": -442.41
+   },
+   {
+    "key": "GanSupertrend \u00b7 short",
+    "n": 498,
+    "winrate": 46.8,
+    "profit_abs": -239.55
+   },
+   {
+    "key": "GanMacdRsi \u00b7 short",
+    "n": 2277,
+    "winrate": 42.7,
+    "profit_abs": -623.75
+   },
+   {
+    "key": "GanSupertrend \u00b7 long",
+    "n": 464,
+    "winrate": 41.6,
+    "profit_abs": -602.34
+   },
+   {
+    "key": "GanMacdRsi \u00b7 long",
+    "n": 2204,
+    "winrate": 40.4,
+    "profit_abs": -362.22
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 short",
+    "n": 607,
+    "winrate": 38.9,
+    "profit_abs": -494.22
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 long",
+    "n": 493,
+    "winrate": 36.7,
+    "profit_abs": -397.61
+   }
+  ],
+  "strategy_pair": [
+   {
+    "key": "SampleStrategy \u00b7 SOL/USDT:USDT",
+    "n": 224,
+    "winrate": 87.5,
+    "profit_abs": -224.48
+   },
+   {
+    "key": "SampleStrategy \u00b7 ETH/USDT:USDT",
+    "n": 208,
+    "winrate": 87.0,
+    "profit_abs": -58.61
+   },
+   {
+    "key": "SampleStrategy \u00b7 DOGE/USDT:USDT",
+    "n": 171,
+    "winrate": 86.5,
+    "profit_abs": -128.89
+   },
+   {
+    "key": "SampleStrategy \u00b7 BTC/USDT:USDT",
+    "n": 191,
+    "winrate": 86.4,
+    "profit_abs": -102.82
+   },
+   {
+    "key": "SampleStrategy \u00b7 XRP/USDT:USDT",
+    "n": 212,
+    "winrate": 85.8,
+    "profit_abs": -73.05
+   },
+   {
+    "key": "SampleStrategy \u00b7 BNB/USDT:USDT",
+    "n": 150,
+    "winrate": 85.3,
+    "profit_abs": -48.22
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 SOL/USDT:USDT",
+    "n": 198,
+    "winrate": 74.7,
+    "profit_abs": -88.27
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 BTC/USDT:USDT",
+    "n": 183,
+    "winrate": 74.3,
+    "profit_abs": 156.62
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 ETH/USDT:USDT",
+    "n": 211,
+    "winrate": 70.6,
+    "profit_abs": -175.56
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 ETH/USDT:USDT",
+    "n": 187,
+    "winrate": 69.5,
+    "profit_abs": 139.76
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 BNB/USDT:USDT",
+    "n": 167,
+    "winrate": 69.5,
+    "profit_abs": -66.9
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 XRP/USDT:USDT",
+    "n": 177,
+    "winrate": 68.9,
+    "profit_abs": -250.31
+   },
+   {
+    "key": "GanMtfTrendRsi \u00b7 DOGE/USDT:USDT",
+    "n": 173,
+    "winrate": 68.8,
+    "profit_abs": -224.09
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 SOL/USDT:USDT",
+    "n": 546,
+    "winrate": 64.7,
+    "profit_abs": -86.44
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 BTC/USDT:USDT",
+    "n": 147,
+    "winrate": 63.9,
+    "profit_abs": -112.1
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 DOGE/USDT:USDT",
+    "n": 117,
+    "winrate": 63.2,
+    "profit_abs": 23.94
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 XRP/USDT:USDT",
+    "n": 526,
+    "winrate": 63.1,
+    "profit_abs": -98.36
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 ETH/USDT:USDT",
+    "n": 592,
+    "winrate": 62.2,
+    "profit_abs": -200.48
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 DOGE/USDT:USDT",
+    "n": 464,
+    "winrate": 62.1,
+    "profit_abs": -200.09
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 BNB/USDT:USDT",
+    "n": 489,
+    "winrate": 61.3,
+    "profit_abs": -76.75
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 SOL/USDT:USDT",
+    "n": 183,
+    "winrate": 61.2,
+    "profit_abs": 103.44
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 XRP/USDT:USDT",
+    "n": 146,
+    "winrate": 61.0,
+    "profit_abs": -78.66
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 BTC/USDT:USDT",
+    "n": 591,
+    "winrate": 60.1,
+    "profit_abs": -230.72
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 DOGE/USDT:USDT",
+    "n": 507,
+    "winrate": 60.0,
+    "profit_abs": 37.56
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 SOL/USDT:USDT",
+    "n": 570,
+    "winrate": 60.0,
+    "profit_abs": -476.86
+   },
+   {
+    "key": "GanRsiBbMeanRev \u00b7 BNB/USDT:USDT",
+    "n": 464,
+    "winrate": 59.5,
+    "profit_abs": -106.66
+   },
+   {
+    "key": "GanConnorsRsi2_4h \u00b7 BNB/USDT:USDT",
+    "n": 129,
+    "winrate": 58.9,
+    "profit_abs": -252.36
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 XRP/USDT:USDT",
+    "n": 542,
+    "winrate": 58.5,
+    "profit_abs": -11.1
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 ETH/USDT:USDT",
+    "n": 589,
+    "winrate": 58.2,
+    "profit_abs": -128.08
+   },
+   {
+    "key": "GanSupertrend \u00b7 XRP/USDT:USDT",
+    "n": 134,
+    "winrate": 56.0,
+    "profit_abs": 67.86
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 DOGE/USDT:USDT",
+    "n": 307,
+    "winrate": 56.0,
+    "profit_abs": -24.14
+   },
+   {
+    "key": "GanConnorsRsi2 \u00b7 BTC/USDT:USDT",
+    "n": 607,
+    "winrate": 53.2,
+    "profit_abs": -270.29
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 SOL/USDT:USDT",
+    "n": 366,
+    "winrate": 53.0,
+    "profit_abs": -77.11
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 XRP/USDT:USDT",
+    "n": 334,
+    "winrate": 49.7,
+    "profit_abs": -354.49
+   },
+   {
+    "key": "GanSupertrend \u00b7 SOL/USDT:USDT",
+    "n": 175,
+    "winrate": 49.1,
+    "profit_abs": -187.88
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 ETH/USDT:USDT",
+    "n": 420,
+    "winrate": 48.8,
+    "profit_abs": -201.5
+   },
+   {
+    "key": "GanSupertrend \u00b7 ETH/USDT:USDT",
+    "n": 170,
+    "winrate": 46.5,
+    "profit_abs": -134.79
+   },
+   {
+    "key": "GanSupertrend \u00b7 DOGE/USDT:USDT",
+    "n": 136,
+    "winrate": 45.6,
+    "profit_abs": -138.4
+   },
+   {
+    "key": "GanMacdRsi \u00b7 DOGE/USDT:USDT",
+    "n": 697,
+    "winrate": 45.6,
+    "profit_abs": -136.32
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 SOL/USDT:USDT",
+    "n": 165,
+    "winrate": 44.8,
+    "profit_abs": -69.3
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 BNB/USDT:USDT",
+    "n": 258,
+    "winrate": 44.2,
+    "profit_abs": -49.15
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 DOGE/USDT:USDT",
+    "n": 184,
+    "winrate": 44.0,
+    "profit_abs": -344.95
+   },
+   {
+    "key": "GanMacdRsi \u00b7 SOL/USDT:USDT",
+    "n": 831,
+    "winrate": 43.4,
+    "profit_abs": -159.13
+   },
+   {
+    "key": "GanMacdRsi \u00b7 ETH/USDT:USDT",
+    "n": 574,
+    "winrate": 42.7,
+    "profit_abs": -148.81
+   },
+   {
+    "key": "GanMacdRsi \u00b7 XRP/USDT:USDT",
+    "n": 808,
+    "winrate": 42.6,
+    "profit_abs": -166.12
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 XRP/USDT:USDT",
+    "n": 199,
+    "winrate": 41.2,
+    "profit_abs": -203.35
+   },
+   {
+    "key": "GanDonchianBreakout \u00b7 BTC/USDT:USDT",
+    "n": 390,
+    "winrate": 40.5,
+    "profit_abs": -153.66
+   },
+   {
+    "key": "GanMacdRsi \u00b7 BNB/USDT:USDT",
+    "n": 764,
+    "winrate": 38.9,
+    "profit_abs": -141.88
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 ETH/USDT:USDT",
+    "n": 167,
+    "winrate": 37.7,
+    "profit_abs": -85.54
+   },
+   {
+    "key": "GanMacdRsi \u00b7 BTC/USDT:USDT",
+    "n": 807,
+    "winrate": 37.1,
+    "profit_abs": -233.72
+   },
+   {
+    "key": "GanSupertrend \u00b7 BTC/USDT:USDT",
+    "n": 176,
+    "winrate": 36.9,
+    "profit_abs": -147.88
+   },
+   {
+    "key": "GanSupertrend \u00b7 BNB/USDT:USDT",
+    "n": 171,
+    "winrate": 34.5,
+    "profit_abs": -300.81
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 BTC/USDT:USDT",
+    "n": 195,
+    "winrate": 33.3,
+    "profit_abs": -69.86
+   },
+   {
+    "key": "GanEmaPullbackAdx \u00b7 BNB/USDT:USDT",
+    "n": 190,
+    "winrate": 27.4,
+    "profit_abs": -118.82
+   }
+  ],
+  "exit_reason": [
+   {
+    "key": "roi",
+    "n": 4154,
+    "winrate": 99.9,
+    "profit_abs": 16653.62
+   },
+   {
+    "key": "trailing_stop_loss",
+    "n": 1597,
+    "winrate": 99.9,
+    "profit_abs": 13786.56
+   },
+   {
+    "key": "below_sma5",
+    "n": 2103,
+    "winrate": 63.3,
+    "profit_abs": 2106.57
+   },
+   {
+    "key": "above_sma5",
+    "n": 1817,
+    "winrate": 61.7,
+    "profit_abs": 1890.11
+   },
+   {
+    "key": "bb_mid",
+    "n": 2034,
+    "winrate": 53.4,
+    "profit_abs": -512.37
+   },
+   {
+    "key": "mtf_exit",
+    "n": 220,
+    "winrate": 33.6,
+    "profit_abs": -719.95
+   },
+   {
+    "key": "macd_rsi_exit",
+    "n": 3220,
+    "winrate": 21.1,
+    "profit_abs": -3024.78
+   },
+   {
+    "key": "exit_signal",
+    "n": 33,
+    "winrate": 9.1,
+    "profit_abs": -180.56
+   },
+   {
+    "key": "dc_exit",
+    "n": 883,
+    "winrate": 8.5,
+    "profit_abs": -4012.14
+   },
+   {
+    "key": "st_flip",
+    "n": 484,
+    "winrate": 4.5,
+    "profit_abs": -2695.25
+   },
+   {
+    "key": "lost_ema50",
+    "n": 665,
+    "winrate": 0.9,
+    "profit_abs": -2129.82
+   },
+   {
+    "key": "stop_loss",
+    "n": 1260,
+    "winrate": 0.0,
+    "profit_abs": -25153.11
+   }
+  ]
+ },
+ "is_trades_total": 18512
+}
