@@ -122,3 +122,7 @@ target/
 !config_examples/config_freqai.example.json
 
 docker-compose-*.yml
+
+# FREQ-GAN: contoh config aman (hanya placeholder)
+!config.example.json
+.env.*
