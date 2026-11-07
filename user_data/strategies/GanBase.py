@@ -10,7 +10,7 @@ class GanBase(IStrategy):
     process_only_new_candles = True
     startup_candle_count = 240
     order_types = {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
-    LEVERAGE = 2.0
+    LEVERAGE = 3.0
 
     def leverage(self, pair, current_time, current_rate, proposed_leverage, max_leverage, entry_tag, side, **kwargs):
         return min(self.LEVERAGE, max_leverage)
