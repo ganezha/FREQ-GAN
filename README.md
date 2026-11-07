@@ -46,6 +46,8 @@
 - [Arsitektur](#%EF%B8%8F-arsitektur)
 - [Instalasi](#-instalasi)
 - [Kontrol (satu jalur saklar)](#%EF%B8%8F-kontrol-satu-jalur-saklar)
+- [Ubah Konfigurasi Manual](#%EF%B8%8F-ubah-konfigurasi-manual)
+- [Pasang API Key Manual](#-pasang-api-key-manual)
 - [Keamanan](#-keamanan)
 - [Hasil Backtest](#-hasil-backtest)
 - [Kredit](#-kredit)
@@ -126,6 +128,150 @@ Semua layanan dikendalikan hanya lewat tiga perintah:
 | `~/bin/bot-on` | Menyalakan semua layanan |
 | `~/bin/bot-off` | Mematikan semua layanan |
 | `~/bin/bot-status` | Menampilkan status layanan |
+
+---
+
+## ⚙️ Ubah Konfigurasi Manual
+
+Pengaturan utama bot ada di dua tempat:
+
+| Pengaturan | File | Contoh nilai | Arti |
+|:--|:--|:--|:--|
+| `dry_run` | `user_data/config.json` | `true` / `false` | `true` = simulasi (uang virtual), `false` = **live, uang asli** |
+| `stake_amount` | `user_data/config.json` | `10` | Modal (margin) per posisi, dalam USDT |
+| `max_open_trades` | `user_data/config.json` | `1` | Jumlah posisi maksimal yang boleh terbuka bersamaan |
+| `trading_mode` | `user_data/config.json` | `"futures"` | Jenis pasar |
+| `margin_mode` | `user_data/config.json` | `"isolated"` | Rugi satu posisi tidak menyeret saldo lain |
+| `LEVERAGE` | `user_data/strategies/GanBase.py` | `2.0` | Leverage untuk semua strategi GAN (dibatasi maksimal dari exchange) |
+
+### Langkah demi langkah
+
+**1. Matikan bot dulu**
+```bash
+~/bin/bot-off
+```
+
+**2. Backup file lama** (supaya bisa dikembalikan)
+```bash
+cd ~/FREQ-GAN
+cp -p user_data/config.json user_data/config.json.bak-$(date +%Y%m%d-%H%M%S)
+```
+
+**3. Buka file dan ubah nilainya**
+```bash
+nano user_data/config.json
+```
+Cari baris yang ingin diubah, contoh:
+```json
+"max_open_trades": 1,
+"stake_amount": 10,
+"dry_run": false,
+"trading_mode": "futures",
+"margin_mode": "isolated",
+```
+Simpan dengan `Ctrl + O` lalu `Enter`, keluar dengan `Ctrl + X`.
+
+> [!IMPORTANT]
+> Angka ditulis **tanpa tanda kutip** (`10`), teks **dengan tanda kutip** (`"isolated"`), `true`/`false` **huruf kecil tanpa kutip**. Setiap baris diakhiri koma, kecuali baris terakhir di dalam kurung.
+
+**4. Ubah leverage** (opsional)
+```bash
+nano user_data/strategies/GanBase.py
+```
+Ubah baris `LEVERAGE = 2.0` ke nilai yang diinginkan, lalu simpan.
+
+**5. Cek file tidak rusak**
+```bash
+python3 -m json.tool user_data/config.json > /dev/null && echo "JSON OK"
+```
+Jika muncul error, perbaiki dulu (biasanya kurang koma atau tanda kutip).
+
+**6. Nyalakan dan cek status**
+```bash
+~/bin/bot-on
+~/bin/bot-status
+```
+
+> [!NOTE]
+> `bot-on` punya pengaman: jika `dry_run` bernilai `false`, bot **tidak akan dinyalakan** sampai pengaman tersebut diganti dengan konfirmasi live secara sengaja.
+
+### Mengembalikan pengaturan lama
+```bash
+~/bin/bot-off
+cp -p user_data/config.json.bak-YYYYMMDD-HHMMSS user_data/config.json
+~/bin/bot-on
+```
+
+> [!CAUTION]
+> Jangan pernah menulis API key, secret, atau passphrase di `config.json`. Simpan hanya di `.env` (`chmod 600`).
+
+---
+
+## 🔑 Pasang API Key Manual
+
+Bot membaca API key dari **variabel lingkungan** (environment variable) di file `.env`, bukan dari `config.json`. File `.env` sudah masuk `.gitignore`, jadi tidak ikut ter-commit.
+
+| Variabel | Isi | Dari Bitget |
+|:--|:--|:--|
+| `FREQTRADE__EXCHANGE__KEY` | API Key | Kunci API |
+| `FREQTRADE__EXCHANGE__SECRET` | Secret Key | Kunci rahasia (hanya tampil sekali) |
+| `FREQTRADE__EXCHANGE__PASSWORD` | Passphrase | Kata sandi yang Anda buat sendiri |
+
+> [!WARNING]
+> Buat API key Bitget dengan jenis **"dibuat oleh sistem" (HMAC)**, izin **Baca tulis** + **Perdagangan**, **tanpa izin Penarikan**, dan tautkan ke **IP server** Anda.
+
+### Langkah demi langkah
+
+**1. Matikan bot**
+```bash
+~/bin/bot-off
+```
+
+**2. Buat / buka file `.env`**
+```bash
+cd ~/FREQ-GAN
+nano .env
+```
+Isi seperti ini (ganti teks setelah `=` dengan milik Anda, tanpa spasi dan tanpa tanda kutip):
+```dotenv
+FREQTRADE__EXCHANGE__KEY=isi_api_key_anda
+FREQTRADE__EXCHANGE__SECRET=isi_secret_key_anda
+FREQTRADE__EXCHANGE__PASSWORD=isi_passphrase_anda
+```
+Simpan dengan `Ctrl + O` lalu `Enter`, keluar dengan `Ctrl + X`.
+
+**3. Kunci izin file** (hanya pemilik yang bisa membaca)
+```bash
+chmod 600 .env
+ls -l .env     # harus terlihat: -rw-------
+```
+
+**4. Pastikan `docker-compose.yml` membaca `.env`**
+
+Di bawah `services: → freqtrade:` harus ada baris:
+```yaml
+    env_file:
+      - .env
+```
+
+**5. Cek variabel terbaca** (hanya menghitung, tidak menampilkan isi key)
+```bash
+grep -c '^FREQTRADE__EXCHANGE__' .env    # hasil harus 3
+```
+
+**6. Nyalakan dan cek status**
+```bash
+~/bin/bot-on
+~/bin/bot-status
+```
+Jika key salah, log akan menampilkan error autentikasi (misalnya `Invalid API Key` / `passphrase`). Perbaiki isi `.env`, lalu ulangi dari langkah 1.
+
+### Mengganti atau mencabut key
+1. Hapus API key lama di halaman **Manajemen API** Bitget.
+2. Buat key baru, lalu ulangi langkah 1–6 di atas.
+
+> [!CAUTION]
+> Jangan pernah mengirim API key, secret, atau passphrase lewat chat, email, screenshot, atau menaruhnya di `config.json` / README. Jika key bocor, **hapus segera** di Bitget.
 
 ---
 
