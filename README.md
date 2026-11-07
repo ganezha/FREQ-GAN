@@ -48,6 +48,7 @@
 - [Kontrol (satu jalur saklar)](#%EF%B8%8F-kontrol-satu-jalur-saklar)
 - [Ubah Konfigurasi Manual](#%EF%B8%8F-ubah-konfigurasi-manual)
 - [Pasang API Key Manual](#-pasang-api-key-manual)
+- [Menyalakan Bot Mode Live](#-menyalakan-bot-mode-live)
 - [Keamanan](#-keamanan)
 - [Hasil Backtest](#-hasil-backtest)
 - [Kredit](#-kredit)
@@ -125,7 +126,7 @@ Semua layanan dikendalikan hanya lewat tiga perintah:
 
 | Perintah | Fungsi |
 |:--|:--|
-| `~/bin/bot-on` | Menyalakan semua layanan |
+| `~/bin/bot-on` | Menyalakan semua layanan (mode live wajib konfirmasi `LIVE`) |
 | `~/bin/bot-off` | Mematikan semua layanan |
 | `~/bin/bot-status` | Menampilkan status layanan |
 
@@ -193,7 +194,7 @@ Jika muncul error, perbaiki dulu (biasanya kurang koma atau tanda kutip).
 ```
 
 > [!NOTE]
-> `bot-on` punya pengaman: jika `dry_run` bernilai `false`, bot **tidak akan dinyalakan** sampai pengaman tersebut diganti dengan konfirmasi live secara sengaja.
+> Jika `dry_run` bernilai `false`, `bot-on` akan meminta **konfirmasi `LIVE`** sebelum menyala. Lihat [Menyalakan Bot Mode Live](#-menyalakan-bot-mode-live).
 
 ### Mengembalikan pengaturan lama
 ```bash
@@ -272,6 +273,105 @@ Jika key salah, log akan menampilkan error autentikasi (misalnya `Invalid API Ke
 
 > [!CAUTION]
 > Jangan pernah mengirim API key, secret, atau passphrase lewat chat, email, screenshot, atau menaruhnya di `config.json` / README. Jika key bocor, **hapus segera** di Bitget.
+
+---
+
+## 🟢 Menyalakan Bot Mode Live
+
+Saklar `~/bin/bot-on` punya **pengaman konfirmasi**, supaya bot **tidak pernah live tanpa sengaja**.
+
+| Kondisi `dry_run` | Perilaku `bot-on` |
+|:--|:--|
+| `true` (simulasi) | Langsung menyala, tanpa pertanyaan |
+| `false` (live) | Tampil peringatan + ringkasan, dicek syaratnya, lalu **wajib ketik `LIVE`** |
+
+### Syarat sebelum live
+
+Bot **dibatalkan otomatis** jika salah satu syarat ini belum terpenuhi:
+
+| # | Syarat | Cara memenuhi |
+|:--:|:--|:--|
+| 1 | `config.json` valid (JSON benar) | Lihat [Ubah Konfigurasi Manual](#%EF%B8%8F-ubah-konfigurasi-manual) |
+| 2 | API key lengkap di `.env` (KEY, SECRET, PASSWORD) | Lihat [Pasang API Key Manual](#-pasang-api-key-manual) |
+| 3 | Izin `.env` = `600` | `chmod 600 ~/FREQ-GAN/.env` |
+| 4 | `docker-compose.yml` memuat `env_file: .env` | Lihat langkah 4 di bagian API key |
+| 5 | Dijalankan dari **terminal interaktif** | Login SSH biasa, bukan dari script / cron |
+
+### Langkah demi langkah
+
+**1. Pastikan bot mati**
+```bash
+~/bin/bot-off
+~/bin/bot-status      # semua harus "mati"
+```
+
+**2. Cek ulang pengaturan**
+```bash
+cd ~/FREQ-GAN
+grep -nE '"(dry_run|stake_amount|max_open_trades|trading_mode|margin_mode)"' user_data/config.json
+grep -n "LEVERAGE =" user_data/strategies/GanBase.py
+```
+Pastikan `dry_run` bernilai `false` dan modal, jumlah posisi, serta leverage sesuai keinginan.
+
+**3. Pastikan saldo Futures cukup**
+
+Saldo USDT di akun **Futures** Bitget harus **lebih besar** dari `stake_amount` (contoh: di atas 10 USDT).
+
+**4. Jalankan saklar**
+```bash
+~/bin/bot-on
+```
+Layar akan menampilkan ringkasan seperti ini:
+```text
+==================================================
+  PERINGATAN: MODE LIVE - MEMAKAI UANG ASLI
+==================================================
+  Exchange        : bitget
+  Mode            : futures / isolated
+  Leverage        : 2.0x
+  Modal per posisi: 10 USDT
+  Posisi maksimal : 1
+==================================================
+Ketik LIVE (huruf besar) untuk menyalakan bot dengan uang asli:
+```
+
+**5. Konfirmasi**
+
+| Anda mengetik | Hasil |
+|:--|:--|
+| `LIVE` (huruf besar semua) | ✅ Bot menyala **live** |
+| Selain itu (`live`, `ya`, kosong, dll.) | ❌ Dibatalkan, bot tetap mati |
+
+**6. Cek status**
+```bash
+~/bin/bot-status
+```
+Pastikan terlihat `Dry-run : False`, container `running`, dan `API ping : pong`.
+
+**7. Pantau log**
+```bash
+docker logs -f --tail 50 freqtrade     # keluar: Ctrl + C (bot tetap jalan)
+```
+Strategi `GanTrendEma4h` memakai candle **4 jam**, jadi order pertama bisa baru muncul berjam-jam kemudian. Ini normal.
+
+### Riwayat konfirmasi
+
+Setiap konfirmasi `LIVE` tercatat otomatis:
+```bash
+cat ~/FREQ-GAN/user_data/logs/live-confirm.log
+```
+Contoh isi: `2026-11-07 06:15:12 LIVE dikonfirmasi oleh <user> stake=10 max=1 lev=2.0`
+
+### Mematikan / kembali ke simulasi
+
+```bash
+~/bin/bot-off                                   # matikan bot
+nano ~/FREQ-GAN/user_data/config.json           # ubah "dry_run": true
+~/bin/bot-on                                    # menyala lagi sebagai simulasi
+```
+
+> [!WARNING]
+> `bot-off` hanya mematikan bot. **Posisi yang sudah terbuka tetap ada di Bitget** sampai ditutup manual di aplikasi Bitget atau bot dinyalakan kembali.
 
 ---
 
